@@ -1,10 +1,16 @@
 // import App from 'next/app'
+import store from 'src/store'
+import { Provider } from 'react-redux' 
 
 import 'src/scss/main.scss';
 import 'src/scss/nav.scss';
 
 function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />;
+    return (
+        <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    );
 }
   
 // Only uncomment this method if you have blocking data requirements for
