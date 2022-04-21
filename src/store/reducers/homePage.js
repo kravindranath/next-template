@@ -1,22 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { 
-  name: ''
-}
+const initialState = {
+  name: "",
+};
 export const homePage = createSlice({
-  name: 'homePage',
+  name: "homePage",
   initialState,
   reducers: {
     updateName: (state, action) => {
-      state.name = action.payload
+      state.name = action.payload;
     },
     clearName: (state) => {
-      state.name = '';
+      state.name = "";
     },
   },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const { clearName, updateName } = homePage.actions
+export const { clearName, updateName } = homePage.actions;
 
-export default homePage.reducer
+export default homePage.reducer;

@@ -1,15 +1,18 @@
 module.exports = {
-    async headers() {
-        return [
+  eslint: {
+    dirs: ['src'],
+  },
+  async headers() {
+    return [
+      {
+        source: "/",
+        headers: [
           {
-            source: '/',
-            headers: [
-              {
-                key: 'Cache-control',
-                value: 'max-age=0, must-revalidate',
-              }
-            ],
+            key: "Cache-control",
+            value: "max-age=0, must-revalidate",
           },
-        ]
+        ],
       },
-}
+    ];
+  },
+};

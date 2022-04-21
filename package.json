@@ -10,7 +10,8 @@
     "start": "next start",
     "export": "next export",
     "dev": "next dev",
-    "telemetry": "next telemetry"
+    "telemetry": "next telemetry",
+    "lint": "next lint --no-cache"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
@@ -23,6 +24,9 @@
     "swr": "^1.2.2"
   },
   "devDependencies": {
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5",
+    "eslint-config-prettier": "^8.5.0",
     "sass": "^1.45.0"
   }
 }
