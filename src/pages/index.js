@@ -4,7 +4,6 @@ import Navigation from "src/ui/Navigation";
 import Layout from "src/ui/Layout/Layout";
 import { MAIN_NAVIGATION } from "src/constants/navigation";
 
-// import { dashboardInit, dashboardSuccess, dashboardError } from "src/store/slices";
 import { dashboardInitAction, dashboardSuccessAction } from "src/store/actions/dashboard"
 import { useEffect } from "react";
 
