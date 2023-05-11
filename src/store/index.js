@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import homePage from "src/store/reducers/homepage";
+import dashboard from "src/store/slices";
 
 export default configureStore({
   reducer: {
-    homePage,
+    dashboard
   },
 });
