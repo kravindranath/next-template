@@ -6,11 +6,10 @@ const DASHBOARD_ERROR = "dashboard/error";
 
 export const dashboardInitAction = createAction(
   DASHBOARD_INIT,
-  function prepare(text) {
+  function prepare() {
     return {
       payload: {
-        data: text,
-        createdAt: new Date().toISOString(),
+        timestamp: new Date().toISOString(),
       },
     };
   }

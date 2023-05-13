@@ -2,14 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { dashboardSuccessAction } from "src/store/actions/dashboard";
 
 const initialState = {
-  data: {},
+  timestamp: "",
+  location: {},
 };
 export const dashboardSlice = createSlice({
   name: "dashboard",
   initialState,
   reducers: {
     init(state, action) {
-      state.data = action.payload?.createdAt;
+      state.timestamp = action.payload?.timestamp;
     },
     success(state, action) {
       console.log("action =>", action.payload);
@@ -23,7 +24,7 @@ export const dashboardSlice = createSlice({
     // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(dashboardSuccessAction.fulfilled, (state, action) => {
       // Add user to the state array
-      state.data = action.payload;
+      state.location = action.payload;
     });
   },
 });
