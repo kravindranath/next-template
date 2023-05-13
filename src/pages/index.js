@@ -4,8 +4,11 @@ import Navigation from "src/ui/Navigation";
 import Layout from "src/ui/Layout/Layout";
 import { MAIN_NAVIGATION } from "src/constants/navigation";
 
-import { dashboardInitAction, dashboardSuccessAction } from "src/store/actions/dashboard"
-import { getDashboardData } from 'src/store/selectors/dashboard'
+import {
+  dashboardInitAction,
+  dashboardSuccessAction,
+} from "src/store/actions/dashboard";
+import { getDashboardData } from "src/store/selectors/dashboard";
 import { useEffect } from "react";
 
 const EMPTY_OBJ = {};
@@ -16,24 +19,28 @@ function Home(_props) {
   const dashboardData = useSelector((state) => state.dashboard.data);
   const dispatch = useDispatch();
 
-  const { name, country } = { ...dashboardData }
+  const { name, country } = { ...dashboardData };
 
-  const countryString = (name && country) ? (name+'-'+country) : '';
+  const countryString = name && country ? name + "-" + country : "";
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(dashboardInitAction());
-  },[dispatch])
-  
+  }, [dispatch]);
 
   return (
     <div>
       <Navigation links={MAIN_NAVIGATION} />
       <Layout>
-        <button type="button" onClick={(event) => dispatch(dashboardSuccessAction())}
-        >Load Data</button>
-        <button onClick={() => dispatch(dashboardInitAction())}>Clear data</button>
+        <button
+          type="button"
+          onClick={(event) => dispatch(dashboardSuccessAction())}
+        >
+          Load Data
+        </button>
+        <button onClick={() => dispatch(dashboardInitAction())}>
+          Clear data
+        </button>
         <p>{countryString}</p>
-
       </Layout>
     </div>
   );

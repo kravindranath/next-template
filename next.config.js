@@ -1,6 +1,6 @@
 module.exports = {
   eslint: {
-    dirs: ['src'],
+    dirs: ["src"],
   },
   async headers() {
     return [
