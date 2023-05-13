@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { dashboardSuccessAction } from "src/store/actions/dashboard";
 
 const initialState = {
-  timestamp: "",
+  isLoading: false,
   location: {},
+  timestamp: new Date().toISOString(),
 };
 export const dashboardSlice = createSlice({
   name: "dashboard",
@@ -11,10 +12,6 @@ export const dashboardSlice = createSlice({
   reducers: {
     init(state, action) {
       state.timestamp = action.payload?.timestamp;
-    },
-    success(state, action) {
-      console.log("action =>", action.payload);
-      state.data = action.payload?.data;
     },
     error(state, action) {
       state.error = action.payload.error;
@@ -25,6 +22,11 @@ export const dashboardSlice = createSlice({
     builder.addCase(dashboardSuccessAction.fulfilled, (state, action) => {
       // Add user to the state array
       state.location = action.payload;
+      state.isLoading = false;
+    });
+    builder.addCase(dashboardSuccessAction.pending, (state, action) => {
+      // Add user to the state array
+      state.isLoading = true;
     });
   },
 });

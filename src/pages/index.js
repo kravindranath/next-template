@@ -16,7 +16,8 @@ const EMPTY_OBJ = {};
 function Home(_props) {
   const props = _props || EMPTY_OBJ;
 
-  const dashboardData = useSelector((state) => state.dashboard.data);
+  const isLoading = useSelector((state) => state.dashboard.isLoading);
+  const dashboardData = useSelector((state) => state.dashboard.location);
   const dispatch = useDispatch();
 
   const { name, country } = { ...dashboardData };
@@ -31,6 +32,7 @@ function Home(_props) {
     <div>
       <Navigation links={MAIN_NAVIGATION} />
       <Layout>
+        {isLoading && <div className="p-10">Loading...</div>}
         <button
           type="button"
           onClick={(event) => dispatch(dashboardSuccessAction())}
