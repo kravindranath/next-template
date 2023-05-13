@@ -37,7 +37,10 @@ function Home(_props) {
         >
           Load Data
         </button>
-        <button onClick={() => dispatch(dashboardInitAction())}>
+        <button
+          className="ml-10"
+          onClick={() => dispatch(dashboardInitAction())}
+        >
           Clear data
         </button>
         <p>{countryString}</p>

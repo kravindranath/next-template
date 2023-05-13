@@ -19,11 +19,9 @@ export const dashboardInitAction = createAction(
 export const dashboardSuccessAction = createAsyncThunk(
   DASHBOARD_SUCCESS,
   async (text) => {
-    const data = await fetch("https://get.geojs.io/v1/ip/country.json").then(
-      (res) => {
-        return res?.json();
-      }
-    );
+    const data = await fetch("/v1/ip/country.json").then((res) => {
+      return res?.json();
+    });
     return data;
   }
 );

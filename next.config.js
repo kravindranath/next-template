@@ -15,4 +15,12 @@ module.exports = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/:path*",
+        destination: "https://get.geojs.io/:path*",
+      },
+    ];
+  },
 };
