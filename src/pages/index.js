@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import Navigation from "src/ui/Navigation";
-import Layout from "src/ui/Layout/Layout";
+import Navigation from "src/components/Navigation";
+import Layout from "src/components/Layout/Layout";
 import { MAIN_NAVIGATION } from "src/constants/navigation";
 
 import {
