@@ -7,8 +7,8 @@ import { MAIN_NAVIGATION } from "src/constants/navigation";
 import {
   dashboardInitAction,
   dashboardSuccessAction,
+  dashboardClearAction,
 } from "src/store/actions/dashboard";
-import { getDashboardData } from "src/store/selectors/dashboard";
 import { useEffect } from "react";
 
 const EMPTY_OBJ = {};
@@ -41,7 +41,7 @@ function Home(_props) {
         </button>
         <button
           className="ml-10"
-          onClick={() => dispatch(dashboardInitAction())}
+          onClick={() => dispatch(dashboardClearAction())}
         >
           Clear data
         </button>

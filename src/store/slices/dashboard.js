@@ -16,6 +16,9 @@ export const dashboardSlice = createSlice({
     error(state, action) {
       state.error = action.payload.error;
     },
+    clear(state, action) {
+      state.location = {};
+    },
   },
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
@@ -31,6 +34,6 @@ export const dashboardSlice = createSlice({
   },
 });
 
-export const { init, success, error } = dashboardSlice.actions;
+export const { init, success, error, clear } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;
